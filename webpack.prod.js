@@ -44,5 +44,6 @@ module.exports = {
       analyzerMode: process.env.ANALYZE_MODE || 'disabled',
     }),
   ],
+  mode: 'production',
 };
 

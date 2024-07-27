@@ -39,7 +39,6 @@ const HelloWorld = () => {
   }, [core40SDK])
 
   return (
-    <>
       <ComponentsProvider>
         <Space around>
           <Span fontSize="xxxxxlarge">
@@ -47,6 +46,7 @@ const HelloWorld = () => {
           </Span>
         </Space>
       </ComponentsProvider>
-    </>
   );
 };
+
+export default HelloWorld;
