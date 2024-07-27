@@ -53,7 +53,7 @@ module.exports = {
   devServer: {
     contentBase: path.join(__dirname, 'dist'),
     compress: true,
-    port: 8081, // Ensure this matches the port being used (DEV = 8081, PROD = 8080)
+    port: 8080, // Ensure this matches the port being used (LocalDEV = 8081, PROD = 8080)
   },  
   plugins: [
     new BundleAnalyzerPlugin({
