@@ -18,7 +18,9 @@ import App from './App'
 import './styles.css'
 
 window.addEventListener('DOMContentLoaded', (event) => {
-  var root = document.createElement('div')
-  document.body.appendChild(root)
-  ReactDOM.render(<App />, root)
-})
+  const rootElement = document.createElement('div');
+  document.body.appendChild(rootElement);
+
+  const root = ReactDOM.createRoot(rootElement);  // Use createRoot
+  root.render(<App />);
+});
