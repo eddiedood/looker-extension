@@ -16,10 +16,10 @@
 const path = require('path')
 
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer')
-  .BundleAnalyzerPlugin
+  .BundleAnalyzerPlugin;
 
 const PATHS = {
-  app: path.join(__dirname, 'src/index.js'),
+  app: path.join(__dirname, './src/index.js'),
 }
 
 module.exports = {
@@ -27,7 +27,7 @@ module.exports = {
     app: PATHS.app,
   },
   output: {
-    path: __dirname + '/dist',
+    path: path.resolve(__dirname, '/dist'),
     filename: 'bundle.js',
   },
   module: {
@@ -39,6 +39,10 @@ module.exports = {
         include: /src/,
         sideEffects: false,
       },
+      {
+        test: /\.css$/, // Add this rule
+        use: ['style-loader', 'css-loader'], // Use style-loader and css-loader
+      },      
     ],
   },
   resolve: {
@@ -46,6 +50,11 @@ module.exports = {
     fallback: { buffer: false },
   },
   devtool: 'source-map',
+  devServer: {
+    contentBase: path.join(__dirname, 'dist'),
+    compress: true,
+    port: 8081, // Ensure this matches the port being used (DEV = 8081, PROD = 8080)
+  },  
   plugins: [
     new BundleAnalyzerPlugin({
       analyzerMode: process.env.ANALYZE_MODE || 'disabled',

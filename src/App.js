@@ -19,14 +19,36 @@
 */
 
 import React from 'react'
-import { HelloWorld } from './HelloWorld'
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import { ExtensionProvider } from '@looker/extension-sdk-react'
 import { hot } from 'react-hot-loader/root'
+import CustomSidebar from './components/CustomSidebar'
+import HelloWorld from './HelloWorld'
 
-export const App = hot(() => {
+const Home = () => <div>Home Page</div>;
+const MonthlyStatements = () => <div>Monthly Statements Page</div>;
+const Analytics = () => <div>Analytics Page</div>;
+
+const App = hot(() => {
   return (
     <ExtensionProvider>
-      <HelloWorld />
+      <Router>
+        <div className="app-container">
+          <CustomSidebar />
+          <div className="main-content">
+            <Routes>
+              <Route path="/home" element={<Home />} />
+              <Route path="/dashboard" element={<MonthlyStatements />} />
+              <Route path="/settings" element={<Analytics />} />
+              <Route path="/" element={<HelloWorld />} />
+            </Routes>
+          </div>
+        </div>
+      </Router>
     </ExtensionProvider>
-  )
-})
+  );
+});
+
+export default App;
+
+

@@ -12,13 +12,14 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-import React, { useEffect, useState, useContext } from 'react'
-import { Space, ComponentsProvider, Span } from '@looker/components'
-import { ExtensionContext } from '@looker/extension-sdk-react'
-
 /**
  * A simple component that uses the Looker SDK through the extension sdk to display a customized hello message.
  */
+
+
+import React, { useContext, useState, useEffect } from 'react';
+import { ExtensionContext } from '@looker/extension-sdk-react';
+import { ComponentsProvider, Space, Span } from '@looker/components';
 
 export const HelloWorld = () => {
   const { core40SDK } = useContext(ExtensionContext)
@@ -35,7 +36,7 @@ export const HelloWorld = () => {
       }
     }
     initialize()
-  }, [])
+  }, [core40SDK])
 
   return (
     <>
@@ -47,5 +48,5 @@ export const HelloWorld = () => {
         </Space>
       </ComponentsProvider>
     </>
-  )
-}
+  );
+};
