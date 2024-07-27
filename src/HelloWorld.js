@@ -21,7 +21,7 @@ import React, { useContext, useState, useEffect } from 'react';
 import { ExtensionContext } from '@looker/extension-sdk-react';
 import { ComponentsProvider, Space, Span } from '@looker/components';
 
-export const HelloWorld = () => {
+const HelloWorld = () => {
   const { core40SDK } = useContext(ExtensionContext)
   const [message, setMessage] = useState()
 

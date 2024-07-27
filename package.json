@@ -10,7 +10,7 @@
     "develop": "webpack serve --hot --port 8080 --https --disable-host-check --config webpack.develop.js",
     "prebuild": "yarn clean"
   },
-  "author": "yournamehere",
+  "author": "CMG Data Tools",
   "license": "Apache-2.0",
   "engines": {
     "node": ">=14"
