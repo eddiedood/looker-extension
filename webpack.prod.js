@@ -12,12 +12,37 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-const commonConfig = require('./webpack.config')
+const path = require('path');
+const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 
 module.exports = {
-  ...commonConfig,
-  mode: 'production',
-  optimization: {
-    chunkIds: 'named',
+  entry: './src/index.js',
+  output: {
+    path: path.resolve(__dirname, 'dist'), // Ensure this path is correct
+    filename: 'bundle.js',
   },
-}
+  module: {
+    rules: [
+      {
+        test: /\.(js|jsx)$/,
+        exclude: /node_modules/,
+        use: {
+          loader: 'babel-loader',
+        },
+      },
+      {
+        test: /\.css$/,
+        use: ['style-loader', 'css-loader'],
+      },
+    ],
+  },
+  resolve: {
+    extensions: ['.js', '.jsx'],
+  },
+  plugins: [
+    new BundleAnalyzerPlugin({
+      analyzerMode: process.env.ANALYZE_MODE || 'disabled',
+    }),
+  ],
+};
+
