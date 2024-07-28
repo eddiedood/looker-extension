@@ -12,15 +12,14 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-import React from 'react'
-import ReactDOM from 'react-dom'
-import App from './App'
-import './styles.css'
+import React from 'react';
+import { createRoot } from 'react-dom/client';
+import App from './App';
+import './styles.css';
 
 window.addEventListener('DOMContentLoaded', (event) => {
-  const rootElement = document.createElement('div');
-  document.body.appendChild(rootElement);
-
-  const root = ReactDOM.createRoot(rootElement);  // Use createRoot
-  root.render(<App />);
+  const root = document.createElement('div');
+  document.body.appendChild(root);
+  createRoot(root).render(<App />);
 });
+

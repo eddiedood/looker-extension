@@ -22,7 +22,7 @@
     "@looker/components": "^4.0.4",
     "@looker/embed-sdk": "^1.8.0",
     "@looker/extension-sdk": "^22.20.0",
-    "@looker/extension-sdk-react": "^22.20.0",
+    "@looker/extension-sdk-react": "^24.12.0",
     "@looker/icons": "^1.5.21",
     "@styled-icons/material": "10.34.0",
     "@styled-icons/material-outlined": "10.34.0",
@@ -32,7 +32,7 @@
     "react": "^17.0.2",
     "react-dom": "^18.3.1",
     "react-is": "^17.0.2",
-    "react-router-dom": "^6.3.0",
+    "react-router-dom": "^6.25.1",
     "style-loader": "^4.0.0",
     "styled-components": "^5.3.3"
   },
