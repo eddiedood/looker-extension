@@ -36,12 +36,12 @@ const App = hot(() => {
         <div className="app-container">
           <CustomSidebar />
           <div className="main-content">
-            <Routes>
-              <Route path="/home" element={<Home />} />
-              <Route path="/dashboard" element={<MonthlyStatements />} />
-              <Route path="/settings" element={<Analytics />} />
-              <Route path="/" element={<HelloWorld />} />
-            </Routes>
+            <Switch>
+              <Route path="/home" component={<Home />} />
+              <Route path="/dashboard" component={<MonthlyStatements />} />
+              <Route path="/settings" component={<Analytics />} />
+              <Route path="/" component={<HelloWorld />} />
+            </Switch>
           </div>
         </div>
       </Router>

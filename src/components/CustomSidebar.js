@@ -1,13 +1,13 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHome, faFileAlt, faChartLine } from '@fortawesome/free-solid-svg-icons';
 
 const CustomSidebar = () => {
-  const navigate = useNavigate();
+  const histroy = useNavigate();
 
   const handleNavigation = (path) => {
-    navigate(path);
+    history.push(path);
   };
 
   return (
